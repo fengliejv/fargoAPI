@@ -1,0 +1,720 @@
+# API 文档
+
+# fargo/api/v2/controller/user.py
+
+### 用户认证接口
+
+## 1. 普通登录接口 (POST /v2/login)
+- **路由**: `/v2/login`
+- **方法**: POST
+- **功能**: 验证平台和用户身份并生成JWT令牌
+- **数据库交互**:
+  ```sql
+  -- 查询平台信息 (get_platform_by_id)
+  SELECT * FROM platform WHERE id = ?;
+  
+  -- 查询用户信息 (get_user_by_id)
+  SELECT * FROM user WHERE uuid = ?;
+  ```
+
+## 2. 微信登录接口 (POST /v2/login/wechat)
+- **路由**: `/v2/login/wechat`
+- **方法**: POST
+- **功能**: 通过微信手机号认证，自动注册或登录并生成JWT令牌
+- **数据库交互**:
+  ```sql
+  -- 查询平台信息 (get_platform_by_id)
+  SELECT * FROM platform WHERE id = ?;
+  
+  -- 根据手机号查询用户 (get_user_by_platform_phone)
+  SELECT * FROM user WHERE platform_id = ? AND phone = ?;
+  
+  -- 新用户注册 (add_user)
+  INSERT INTO user (uuid, platform_id, phone) VALUES (?, ?, ?);
+  ```
+
+## 3. 令牌刷新接口 (GET /v2/token)
+- **路由**: `/v2/token`
+- **方法**: GET
+- **功能**: 验证现有令牌并生成新的JWT令牌
+- **数据库交互**: 无直接数据库交互
+
+### 关键特性
+- 使用JWT进行用户认证
+- 支持平台级别的访问控制
+- 集成微信小程序登录
+- 支持手机号码注册
+- 包含异常处理和日志记录
+
+### 依赖服务
+- 微信小程序API
+- JWT认证服务
+- 平台管理服务
+- 用户管理服务
+
+### 错误处理
+所有接口都包含统一的错误响应格式：
+```json
+{
+"status": false,
+"err_msg": "错误详情"
+}
+```
+
+# fargo/api/v2/controller/pando.py
+
+### 聊天相关接口
+
+## 1. 发送聊天消息 (POST /v2/chat-messages)
+
+**文件路径:** `fargo/api/v2/controller/pando.py`
+
+**功能描述:**
+处理聊天消息的API端点，支持两种模式：
+1. 普通对话模式：直接创建新的对话或在现有对话中继续
+2. 分享对话模式：基于已分享的对话内容创建新的对话
+
+**请求参数:**
+```json
+{
+    "conversation_id": "string | null",  // 可选，对话ID
+    "share_id": "string | null",         // 可选，分享ID
+    "query": "string"                    // 必填，用户输入的问题
+}
+```
+
+**数据库交互:**
+1. 通过`get_conversation_id_from_share`查询分享对话信息
+   ```sql
+   SELECT * FROM conversation_share WHERE share_id = ?
+   ```
+
+2. 通过`get_conversation_by_id`查询对话信息
+   ```sql
+   SELECT * FROM conversation WHERE uuid = ?
+   ```
+
+3. 通过`get_messages`获取历史消息
+   ```sql
+   SELECT * FROM message 
+   WHERE conversation_id = ? 
+   ORDER BY id DESC 
+   LIMIT ?
+   ```
+
+4. 通过`add_message`添加新消息
+   ```sql
+   INSERT INTO message (uuid, query, answer, conversation_id, created_time) 
+   VALUES (?, ?, ?, ?, ?)
+   ```
+
+**特殊说明:**
+- 使用了SSE (Server-Sent Events) 技术实现流式响应
+- 支持对话内容分享功能
+- 集成了与外部AI服务的交互
+- 包含完整的错误处理和日志记录
+
+## 2. 获取消息列表 (GET /v2/messages)
+
+**文件路径:** `fargo/api/v2/controller/pando.py`
+
+**功能描述:**
+获取指定会话的消息列表。支持分页查询，可以指定起始消息ID和返回条数限制。
+
+**请求参数:**
+- `conversation_id` (query string): 会话ID
+- `first_id` (query string): 起始消息ID，用于分页
+- `limit` (query string): 返回消息数量限制，默认20条
+- `Authorization` (header): 用户认证token
+
+**数据库交互:**
+1. 验证用户权限:
+
+```sql
+-- get_conversation_by_user_id()
+SELECT * FROM conversations 
+WHERE user_id = ? AND uuid = ?;
+```
+
+2. 获取消息列表:
+
+```sql
+-- get_messages()
+SELECT * FROM messages 
+WHERE conversation_id = ? 
+AND (? IS NULL OR id < ?) 
+ORDER BY id DESC 
+LIMIT ?;
+```
+
+**返回格式:**
+
+```json
+{
+    "status": true/false,
+    "data": [
+        {
+            // 消息详情列表
+        }
+    ],
+    "err_msg": "错误信息"
+}
+```
+
+**错误处理:**
+- 未授权用户: `{"err_msg": "user unauthorized"}`
+- 会话不存在: `{"status": false, "err_msg": "conversation not found"}`
+- 其他异常: 返回具体错误信息和行号
+
+**特殊说明:**
+- 消息列表会按时间倒序排列（messages.reverse()）
+- 实现了基于first_id的分页机制
+- 包含完整的用户权限验证流程
+
+### 分享相关接口
+
+## 1. 查询分享消息 (POST /v2/share/messages)
+
+**路径**: `/v2/share/messages`  
+**文件位置**: `fargo/api/v2/controller/pando.py`  
+**方法**: POST  
+**功能描述**: 根据分享ID获取对话消息记录
+
+**请求参数**:
+- platform_id: 平台ID
+- platform_key: 平台密钥
+- share_id: 分享ID
+- first_id: 起始消息ID (可选)
+- limit: 返回消息数量限制，默认20条
+
+**数据库交互**:
+1. 验证平台信息:
+
+```sql
+SELECT * FROM platform WHERE id = {platform_id}
+```
+
+2. 获取分享对话ID:
+
+```sql
+SELECT * FROM conversation_share WHERE share_id = {share_id}
+```
+
+3. 获取消息记录:
+
+```sql
+SELECT * FROM messages 
+WHERE conversation_id = {share_conversation_id} 
+AND (CASE WHEN {first_id} IS NOT NULL THEN id < {first_id} ELSE 1=1 END)
+ORDER BY id DESC 
+LIMIT {limit}
+```
+
+**返回数据**:
+
+```json
+{
+    "status": true/false,
+    "data": [消息记录列表],
+    "err_msg": "错误信息"
+}
+```
+
+**错误处理**:
+- 平台未找到: "platform not found"
+- 平台密钥错误: "platform key error"
+- 对话未找到: "conversation not found"
+
+**特殊说明**:
+- 消息记录会按时间倒序排列
+- 支持分页查询
+- 需要进行平台验证
+
+## 2. 创建共享对话 (POST /v2/conversation/share)
+
+**路径**: `/v2/conversation/share`  
+**文件位置**: `fargo/api/v2/controller/pando.py`  
+**HTTP方法**: POST  
+**功能描述**: 基于已有的共享对话创建新的对话副本
+
+**请求参数**:
+- share_id: 共享对话的唯一标识符
+- Authorization: 用户认证token (请求头)
+
+**数据库交互**:
+1. 查询共享对话信息
+
+```sql
+SELECT * FROM conversation_share WHERE share_id = ?
+```
+
+2. 查询原始对话信息
+
+```sql
+SELECT * FROM conversation WHERE uuid = ?
+```
+
+3. 获取对话消息
+
+```sql
+SELECT * FROM message 
+WHERE conversation_id = ? 
+ORDER BY id DESC 
+LIMIT 50
+```
+
+4. 创建新的用户对话记录
+
+```sql
+INSERT INTO user_conversation (
+    conversation_id, 
+    name, 
+    user_id, 
+    created_time
+) VALUES (?, ?, ?, ?)
+```
+
+5. 复制共享消息到新对话
+
+```sql
+INSERT INTO message (
+    conversation_id,
+    query,
+    answer,
+    created_time
+) 
+SELECT 
+    ?, 
+    query, 
+    answer, 
+    created_time 
+FROM message 
+WHERE conversation_id = ?
+```
+
+**返回数据**:
+
+```json
+{
+    "status": true/false,
+    "data": {
+        "conversation_id": "新创建的对话ID"
+    },
+    "err_msg": "错误信息（如果有）"
+}
+```
+
+**主要处理流程**:
+1. 验证用户token
+2. 根据share_id获取共享对话信息
+3. 获取原始对话内容和消息记录
+4. 将消息合并成文本
+5. 创建新的对话
+6. 复制消息记录到新对话
+7. 返回新创建的对话ID
+
+**错误处理**:
+- 未授权用户访问
+- 共享对话不存在
+- 原始对话不存在
+- 数据库操作异常
+
+## 3. 创建对话分享ID (POST /v2/conversation/share/create)
+
+**路径**: `/v2/conversation/share/create`  
+**文件位置**: `fargo/api/v2/controller/pando.py`  
+**HTTP方法**: POST  
+**功能描述**: 创建一个对话的分享链接，允许用户选择特定消息进行分享
+
+**请求参数**:
+- conversation_id: 对话ID
+- message_id_list: 要分享的消息ID列表
+- Authorization: 用户认证token (请求头)
+
+**数据库交互**:
+1. 验证对话所有权
+
+```sql
+-- get_conversation_by_id
+SELECT * FROM conversations WHERE uuid = {conversation_id}
+```
+
+2. 获取指定消息
+
+```sql
+-- get_messages_by_ids
+SELECT * FROM messages 
+WHERE id IN ({message_id_list}) 
+AND conversation_id = {conversation_id}
+```
+
+3. 创建分享对话记录
+
+```sql
+-- add_share_conversation
+INSERT INTO share_conversations (
+    uuid,
+    name,
+    created_time
+) VALUES (
+    {share_conversation_id},
+    {conversation_name},
+    {now_time}
+)
+```
+
+4. 复制分享的消息
+
+```sql
+-- add_share_messages
+INSERT INTO share_messages (
+    message_data,
+    share_conversation_id
+) VALUES (
+    {message_data},
+    {share_conversation_id}
+)
+```
+
+5. 创建分享记录
+
+```sql
+-- add_share
+INSERT INTO shares (
+    share_id,
+    share_conversation_id,
+    share_user_id,
+    created_time
+) VALUES (
+    {share_id},
+    {share_conversation_id},
+    {share_user_id},
+    {now_time}
+)
+```
+
+**返回数据**:
+
+```json
+{
+    "status": true/false,
+    "data": {
+        "share_id": "生成的分享ID"
+    },
+    "err_msg": "错误信息(如果有)"
+}
+```
+
+**错误处理**:
+- 消息列表为空: "message_id_list is null"
+- 用户未授权: "user unauthorized"
+- 对话不存在: "conversation not found"
+- 消息不存在: "messages not found"
+
+**业务流程**:
+1. 验证用户token
+2. 检查消息列表是否为空
+3. 验证对话是否存在
+4. 获取指定的消息列表
+5. 生成新的分享对话ID和分享ID
+6. 创建分享对话记录
+7. 复制要分享的消息
+8. 创建分享记录
+9. 返回分享ID
+
+### 对话管理接口
+
+## 1. 获取对话列表 (GET /v2/conversations)
+
+**接口信息**
+- 路径: `/v2/conversations`
+- 方法: GET
+- 文件位置: fargo/api/v2/controller/pando.py
+- 功能描述: 获取用户的对话历史列表，并按时间分类(今天/本周/本月/本年/更早)
+
+**请求参数**
+- last_id: 上一页最后一条记录ID (Query参数)
+- limit: 每页记录数量，默认20条 (Query参数)
+- Authorization: 用户认证token (Header)
+
+**数据库交互**
+- 调用函数: `get_conversations_by_last_id()`
+- 参数: 
+  - user_id: 用户ID
+  - last_id: 分页标识
+  - limit: 分页大小
+
+**对应SQL语句**
+```sql
+SELECT c.uuid, c.name, c.created_time, c.id
+FROM conversation c
+JOIN user_conversation uc ON c.uuid = uc.conversation_id
+WHERE uc.user_id = {user_id}
+  AND c.id < {last_id}  -- 如果last_id存在
+ORDER BY c.id DESC
+LIMIT {limit}
+```
+
+**返回数据**
+
+```json
+{
+  "status": true,
+  "data": [
+    {
+      "uuid": "会话ID",
+      "name": "会话名称",
+      "created_time": 1234567890,  // 时间戳
+      "time_type": "day"  // 时间分类：day/week/month/year
+    }
+  ],
+  "err_msg": ""
+}
+```
+
+**特殊处理**
+1. 对返回的对话记录按创建时间进行分类:
+   - day: 今天创建的对话
+   - week: 本周创建的对话
+   - month: 本月创建的对话
+   - year: 本年创建的对话或更早
+2. 将datetime类型的created_time转换为时间戳
+3. 分页采用ID递减方式，确保数据一致性
+
+## 2. 删除对话 (DELETE /v2/conversation)
+
+**接口信息**
+- 路径: `/v2/conversation`
+- 方法: `DELETE`
+- 文件位置: `fargo/api/v2/controller/pando.py`
+
+**功能描述**
+删除指定用户的特定对话记录。该接口会验证用户权限，并根据用户ID和对话ID删除相应的对话内容。
+
+**请求参数**
+- conversation_id: 对话ID (URL参数)
+- Authorization: 用户认证token (Header)
+
+**数据库交互**
+- 表操作: 删除用户对话记录
+- 调用函数: `delete_conversations_by_id(user_id, conversation_id)`
+- 预期SQL:
+
+```sql
+DELETE FROM conversations 
+WHERE user_id = ? AND uuid = ?;
+```
+
+**返回结果**
+
+```json
+{
+    "status": true/false,
+    "err_msg": "错误信息(如果有)"
+}
+```
+
+**错误处理**
+- 未授权用户: 返回"user unauthorized"错误
+- 执行异常: 记录错误日志并返回详细错误信息
+
+**权限要求**
+- 需要有效的用户认证token
+- 只能删除属于当前用户的对话
+
+## 3. 重命名对话 (POST /v2/conversation/name)
+
+**接口信息**
+- 路径: `/v2/conversation/name`
+- 方法: POST
+- 文件位置: fargo/api/v2/controller/pando.py
+- 功能描述: 更新指定对话的名称
+
+**请求参数**
+- name: 新的对话名称
+- conversation_id: 对话ID
+- Authorization: 用户认证token (请求头)
+
+**数据库交互**
+- 表名: conversations
+- 操作: UPDATE
+- 相关SQL:
+
+```sql
+UPDATE conversations 
+SET name = #{name} 
+WHERE uuid = #{conversation_id} 
+AND user_id = #{user_id}
+```
+
+**返回结果**
+
+```json
+{
+    "status": true/false,
+    "err_msg": "错误信息(如果有)"
+}
+```
+
+**错误处理**
+- 未授权访问: "user unauthorized"
+- 数据库操作异常: 返回具体错误信息
+
+**业务逻辑**
+1. 验证用户token
+2. 获取请求参数(name和conversation_id)
+3. 调用update_conversation_name_by_id更新对话名称
+4. 返回操作结果
+
+**注意事项**
+- 只能修改属于当前用户的对话名称
+- 需要同时验证user_id和conversation_id确保安全性
+
+## 4. 获取对话二维码 (POST /v2/conversation/qrcode)
+
+**基本信息**
+- **接口路径**: `/v2/conversation/qrcode`
+- **请求方法**: POST
+- **文件位置**: fargo/api/v2/controller/pando.py
+- **函数名**: get_conversation_qrcode()
+
+### 功能描述
+生成微信小程序码，用于分享对话内容。该接口会调用微信公众平台的接口生成带参数的小程序码。
+
+### 请求参数
+- 需要在请求头中包含 `Authorization` 用于身份验证
+- 请求体为 JSON 格式
+
+### 权限验证
+- 使用 `check_token()` 验证用户身份
+- 需要获取微信接口的 access_token
+
+### 数据库交互
+该接口本身不直接与数据库交互，但调用了以下服务函数：
+- `get_pando_wechat_access_code()`: 获取微信接口调用凭证
+
+### 返回结果
+```json
+{
+    "status": boolean,
+    "data": "base64编码的二维码图片",
+    "err_msg": "错误信息（如果有）"
+}
+```
+
+### 错误处理
+- 未授权访问: `{"err_msg": "user unauthorized"}`
+- access_token获取失败: `{"err_msg": "access_token get fail"}`
+- 二维码生成失败: `{"err_msg": "req qrcode fail {具体错误信息}"}`
+
+### 相关服务调用
+- 微信小程序接口：`https://api.weixin.qq.com/wxa/getwxacodeunlimit`
+
+### 其他接口
+
+## 1. 语音转文本 (POST /v2/audio-to-text)
+
+**接口信息**
+- 路径: `/v2/audio-to-text`
+- 方法: `POST`
+- 文件位置: `fargo/api/v2/controller/pando.py`
+
+**功能描述**
+将上传的音频文件转换为文本。该接口作为代理，将请求转发到内部的音频转文本服务。
+
+**请求参数**
+- 请求头:
+  - `Authorization`: 用户认证token
+- 请求体:
+  - `file`: 音频文件(multipart/form-data格式)
+
+**处理流程**
+1. 验证用户token
+2. 接收上传的音频文件
+3. 转发请求到内部服务 `http://ops.fargoinsight.com/v1/audio-to-text`
+4. 返回转换后的文本结果
+
+**数据库交互**
+- 此接口不直接与数据库交互
+- 仅通过 `check_token()` 函数验证用户身份
+
+**返回结果**
+
+```json
+{
+    "status": true/false,
+    "data": "转换后的文本内容",
+    "err_msg": "错误信息(如果有)"
+}
+```
+
+**错误处理**
+- 未授权访问: `{"err_msg": "user unauthorized"}`
+- 转换失败: `{"err_msg": "audio to text fail {具体错误信息}"}`
+- 系统异常: 返回详细的错误信息和行号
+
+**注意事项**
+- 接口需要用户认证
+- 依赖内部音频转文本服务的可用性
+- 使用固定的内部服务认证token
+
+## 2. 获取平台配置 (POST /v2/config)
+
+### 基本信息
+- **文件路径**: fargo/api/v2/controller/pando.py
+- **功能描述**: 获取平台配置信息的接口
+- **请求方式**: POST
+- **认证方式**: 通过platform_id和platform_key进行平台级别的认证
+
+### 请求参数
+| 参数名 | 类型 | 必填 | 描述 |
+|-------|------|------|------|
+| platform_id | string | 是 | 平台ID |
+| platform_key | string | 是 | 平台密钥 |
+
+### 数据库交互
+#### 查询操作
+1. **获取平台信息**
+   - 函数: `get_platform_by_id(platform_id)`
+   - 预期SQL:
+   ```sql
+   SELECT * FROM platform WHERE id = ?
+   ```
+
+2. **获取系统变量**
+   - 函数: `get_system_variable("pando_config")`
+   - 预期SQL:
+   ```sql
+   SELECT * FROM system_variable WHERE name = 'pando_config'
+   ```
+
+### 返回数据
+```json
+{
+    "status": true/false,
+    "data": {
+        // 平台配置信息(JSON格式)
+    },
+    "err_msg": "错误信息"
+}
+```
+
+### 错误处理
+- 平台未找到: "platform not found"
+- 平台密钥错误: "platform key error"
+- 其他异常: 返回具体的错误信息和行号
+
+### 业务逻辑
+1. 验证平台ID和密钥的有效性
+2. 检查平台用户是否为'pando'
+3. 获取并返回pando_config系统配置
+4. 将配置内容解析为JSON格式返回
+
+### 注意事项
+- 仅支持pando平台用户获取配置
+- 配置信息存储在system_variable表中
+- 返回的配置信息需要JSON解析
+
+```
+
+
