@@ -1,0 +1,16 @@
+{
+  "authority": "private.quartr.com",
+  "accept": "*/*",
+  "accept-language": "zh-CN,zh;q=0.9",
+  "authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2VFFPVHpfWjZwM0M5alg5SFVLSmxoOTdLN1d4NG5WUGdwSkxxMFlpVHM4In0.eyJleHAiOjE3MjA4NjI5NDEsImlhdCI6MTcxODI3MDk0MSwiYXV0aF90aW1lIjoxNzE4MjcwOTQwLCJqdGkiOiJiZWNkOWJkYy0yMjhjLTRhOTctODA1NC1iMTk5OWY5YmYyNWMiLCJpc3MiOiJodHRwczovL2F1dGgucXVhcnRyLmNvbS9yZWFsbXMvcHJvZCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI2YjlhMjliOC00YWFmLTQzZTgtYjI5NC0xMTBkOGRjYWE1MDQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3ZWIiLCJzZXNzaW9uX3N0YXRlIjoiNGJlYWVjZTYtOGYxNi00ZTMyLWE1ZTItNjMxMmYwMTE4Yjk1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwczovL3ByLSoucXVhcnRyLnZlcmNlbC5hcHAiLCJodHRwczovL3dlYi1kZXYucXVhcnRyLmNvbSIsImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8qIiwiaHR0cHM6Ly93ZWIucXVhcnRyLmNvbSIsImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJkZWZhdWx0LXJvbGVzLXByb2QiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCB1c2VyX2RhdGEgcHJvZmlsZSIsInNpZCI6IjRiZWFlY2U2LThmMTYtNGUzMi1hNWUyLTYzMTJmMDExOGI5NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoi6LaF5YabIOenpiIsImlkIjo1OTE5NjIsInByZWZlcnJlZF91c2VybmFtZSI6ImNoYW9qdW5rZWppQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiLotoXlhpsiLCJmYW1pbHlfbmFtZSI6IuenpiIsImVtYWlsIjoiY2hhb2p1bmtlamlAZ21haWwuY29tIn0.iJU4VCF_4VhRxfF27u_TtAik9VAvezUqexckky994Enn1Hnny6qHZPEFluxaMLNQfCcf_eQQ5L4Y6c7ncP2UCdd695KPA-DgFc4TW6ZrVCQNyUDsg3u2asBCKQ_tKL-H6yvT_ItYCt2uPAKd-pyPzLihG6uy_XFtN7aXj4qsCuxmGQTLUP-GUGeCOl6CVNdTKKnlTHkuQ0o8uA_6kQoGpQBRm-eWuwVVc_QyXH0i5ZenLbwxisp0meIJ5mgyEDK8LBa_RpWXN7owVgQ0TEQ24akjC6EaLsPXnIKvs9IGs8a5cLYGiFqIQTy1IkTpHdY03uJWPJgiP3CcgHhW3HwKbA",
+  "content-type": "application/json",
+  "origin": "https://web.quartr.com",
+  "referer": "https://web.quartr.com/",
+  "sec-ch-ua": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "sec-fetch-dest": "empty",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-site": "same-site",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+}

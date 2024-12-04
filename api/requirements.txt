@@ -1,0 +1,12 @@
+api==0.0.7
+deepl==1.17.0
+Flask==3.0.2
+gevent==23.9.1
+PyJWT==2.8.0
+PyMySQL==1.1.0
+Requests==2.31.0
+requests_toolbelt==1.0.0
+pypdf==4.2.0
+alibabacloud-dingtalk==2.1.18
+tencentcloud-sdk-python==3.0.1193
+cos-python-sdk-v5==1.9.30

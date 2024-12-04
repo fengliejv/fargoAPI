@@ -1,0 +1,137 @@
+id,platform,company_id,company_code,company_name,symbol
+94f583e6-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22c4-9d83-11ee-8ba2-c75ffde41a09,NVDA.O,英伟达,NVDA.US
+94f583e7-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22c5-9d83-11ee-8ba2-c75ffde41a09,3968.HK,招商银行,3968.HK
+94f583e8-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22c6-9d83-11ee-8ba2-c75ffde41a09,NTES.O,网易,NTES.US
+94f583e9-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22c7-9d83-11ee-8ba2-c75ffde41a09,BABA.O,阿里巴巴,BABA.US
+94f583ea-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22c8-9d83-11ee-8ba2-c75ffde41a09,GOOGL.O,谷歌母公司,GOOGL.US
+94f583eb-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22c9-9d83-11ee-8ba2-c75ffde41a09,MU.O,镁光科技有限公司,MU.US
+94f583ec-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ca-9d83-11ee-8ba2-c75ffde41a09,0941.HK,中国移动,0941.HK
+94f583ed-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22cb-9d83-11ee-8ba2-c75ffde41a09,0386.HK,中石化,0386.HK
+94f583ee-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22cc-9d83-11ee-8ba2-c75ffde41a09,SQ.O,Block,SQ.US
+94f583ef-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22cd-9d83-11ee-8ba2-c75ffde41a09,0981.HK,中芯国际,0981.HK
+94f583f0-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ce-9d83-11ee-8ba2-c75ffde41a09,0388.HK,香港交易所,0388.HK
+94f583f1-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22cf-9d83-11ee-8ba2-c75ffde41a09,CCL.O,Carnival,CCL.US
+94f583f2-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d0-9d83-11ee-8ba2-c75ffde41a09,0005.HK,汇丰控股,0005.HK
+94f583f3-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d1-9d83-11ee-8ba2-c75ffde41a09,1458.HK,周黑鸭,1458.HK
+94f583f4-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d2-9d83-11ee-8ba2-c75ffde41a09,META.O,Meta?Platforms,META.US
+94f583f5-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d3-9d83-11ee-8ba2-c75ffde41a09,AAPL.O,苹果Apple,AAPL.US
+94f583f6-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d4-9d83-11ee-8ba2-c75ffde41a09,ZS.O,Zscaler,ZS.US
+94f583f7-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d5-9d83-11ee-8ba2-c75ffde41a09,NFLX.O,奈飞,NFLX.US
+94f583f8-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d6-9d83-11ee-8ba2-c75ffde41a09,JD.O,京东,JD.US
+94f583f9-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d7-9d83-11ee-8ba2-c75ffde41a09,2330.TW,台积电,2330.TW
+94f583fa-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d8-9d83-11ee-8ba2-c75ffde41a09,ADBE.O,Adobe,ADBE.US
+94f583fb-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22d9-9d83-11ee-8ba2-c75ffde41a09,1810.HK,小米集团,1810.HK
+94f583fc-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22da-9d83-11ee-8ba2-c75ffde41a09,PYPL.O,PayPal,PYPL.US
+94f583fd-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22db-9d83-11ee-8ba2-c75ffde41a09,1024.HK,快手,1024.HK
+94f583fe-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22dc-9d83-11ee-8ba2-c75ffde41a09,INTC.O,Intel,INTC.US
+94f583ff-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22dd-9d83-11ee-8ba2-c75ffde41a09,0631.HK,三一国际,0631.HK
+94f58400-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22de-9d83-11ee-8ba2-c75ffde41a09,0823.HK,领展房产基金,0823.HK
+94f58401-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22df-9d83-11ee-8ba2-c75ffde41a09,DIS.N,迪士尼Disney,DIS.US
+94f58402-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e0-9d83-11ee-8ba2-c75ffde41a09,CAPD.SI,Capitaland?Ascendas?REIT,N2IU.SI
+94f58403-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e1-9d83-11ee-8ba2-c75ffde41a09,BEKE.N,贝壳找房,BEKE.US
+94f58404-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e2-9d83-11ee-8ba2-c75ffde41a09,2318.HK,中国平安,2318.HK
+94f58405-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e3-9d83-11ee-8ba2-c75ffde41a09,NIO.N,蔚来汽车,NIO.US
+94f58406-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e4-9d83-11ee-8ba2-c75ffde41a09,QCOM.O,Qualcomm,QCOM.US
+94f58407-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e5-9d83-11ee-8ba2-c75ffde41a09,DDOG.N,Datadog,DDOG.US
+94f58408-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e6-9d83-11ee-8ba2-c75ffde41a09,1299.HK,友邦保险,1299.HK
+94f58409-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e7-9d83-11ee-8ba2-c75ffde41a09,WFC.N,Wells?Fargo,WFC.US
+94f5840a-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e8-9d83-11ee-8ba2-c75ffde41a09,0700.HK,腾讯控股,0700.HK
+94f5840b-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22e9-9d83-11ee-8ba2-c75ffde41a09,NKE.N,耐克Nike,NKE.US
+94f5840c-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ea-9d83-11ee-8ba2-c75ffde41a09,TSLA.O,特斯拉 Tesla,TSLA.US
+94f5840d-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22eb-9d83-11ee-8ba2-c75ffde41a09,1211.HK,比亚迪,1211.HK
+94f5840e-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ec-9d83-11ee-8ba2-c75ffde41a09,A17U.SI,Mapletree?Pan?Asia?Commercial?Trust,A17U.SI
+94f5840f-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ed-9d83-11ee-8ba2-c75ffde41a09,AI.O,C3.ai,AI.US
+94f58410-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ee-9d83-11ee-8ba2-c75ffde41a09,XPEV.N,小鹏汽车,XPEV.US
+94f58411-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ef-9d83-11ee-8ba2-c75ffde41a09,FCX.N,Freeport-McMoRan,FCX.US
+94f58412-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f0-9d83-11ee-8ba2-c75ffde41a09,MGM.N,MGM?International,MGM.US
+94f58413-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f1-9d83-11ee-8ba2-c75ffde41a09,LI.O,理想汽车,LI.US
+94f58414-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f2-9d83-11ee-8ba2-c75ffde41a09,0883.HK,中国海洋石油,0883.HK
+94f58415-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f3-9d83-11ee-8ba2-c75ffde41a09,CRM.N,Salesforce,CRM.US
+94f58416-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f4-9d83-11ee-8ba2-c75ffde41a09,WMT.N,Walmart,WMT.US
+94f58417-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f5-9d83-11ee-8ba2-c75ffde41a09,2020.HK,安踏体育,2020.HK
+94f58418-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f6-9d83-11ee-8ba2-c75ffde41a09,JPM.N,JP?Morgan,JPM.US
+94f58419-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f7-9d83-11ee-8ba2-c75ffde41a09,FUTU.O,富途,FUTU.US
+94f5841a-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f8-9d83-11ee-8ba2-c75ffde41a09,ABNB.O,AirBnb,ABNB.US
+94f5841b-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22f9-9d83-11ee-8ba2-c75ffde41a09,2331.HK,李宁,2331.HK
+94f5841c-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22fa-9d83-11ee-8ba2-c75ffde41a09,BILI.O,哔哩哔哩,BILI.US
+94f5841d-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22fb-9d83-11ee-8ba2-c75ffde41a09,BIDU.O,百度,BIDU.US
+94f5841e-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22fc-9d83-11ee-8ba2-c75ffde41a09,AMD.O,AMD,AMD.US
+94f5841f-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22fd-9d83-11ee-8ba2-c75ffde41a09,2899.HK,紫金矿业,2899.HK
+94f58420-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22fe-9d83-11ee-8ba2-c75ffde41a09,PDD.O,拼多多,PDD.US
+94f58421-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf22ff-9d83-11ee-8ba2-c75ffde41a09,ORCL.N,甲骨文Oracle,ORCL.US
+94f58422-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2300-9d83-11ee-8ba2-c75ffde41a09,BA.N,Boeing,BA.US
+94f58423-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2301-9d83-11ee-8ba2-c75ffde41a09,AMZN.O,Amazon,AMZN.US
+94f58424-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2302-9d83-11ee-8ba2-c75ffde41a09,0857.HK,中国石油股份,0857.HK
+94f58425-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2303-9d83-11ee-8ba2-c75ffde41a09,MSFT.O,微软Microsoft,MSFT.US
+94f58426-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2304-9d83-11ee-8ba2-c75ffde41a09,1378.HK,中国宏桥,1378.HK
+94f58427-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2305-9d83-11ee-8ba2-c75ffde41a09,MAR.O,万豪Marriot,MAR.US
+94f58428-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2306-9d83-11ee-8ba2-c75ffde41a09,SE.N,Sea,SE.US
+94f58429-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2307-9d83-11ee-8ba2-c75ffde41a09,CMLT.SI,CapitaLand?Integrated?Commercial?Trust,C38U.SI
+94f5842a-9ff3-11ee-a60e-8f1594dd445b,ubs,cddf2308-9d83-11ee-8ba2-c75ffde41a09,3690.HK,美团,3690.HK
+982f9698-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d8-9d83-11ee-8ba2-c75ffde41a09,c33afe4e-d481-11d5-8f83-f03a82eb7e91,Adobe Inc.,ADBE.US
+982f96bc-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22fc-9d83-11ee-8ba2-c75ffde41a09,c8248362-d481-11d5-8f83-f03a82eb7e91,Advanced Micro Devices Inc.,AMD.US
+982f96a6-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e6-9d83-11ee-8ba2-c75ffde41a09,fc0e81d6-63de-11d6-9ca8-95e380059dbc,AIA Group,1299.HK
+982f96b8-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f8-9d83-11ee-8ba2-c75ffde41a09,3ff73b04-063e-4fb0-99ae-115206e4af4f,Airbnb Inc.,ABNB.US
+982f9687-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22c7-9d83-11ee-8ba2-c75ffde41a09,40c85974-6375-11d6-9b81-bf2c85eb258c,Alibaba Group,BABA.US
+982f9688-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22c8-9d83-11ee-8ba2-c75ffde41a09,8fb59fc0-635b-11d6-9da5-970c30ab47aa,Alphabet Inc.,GOOGL.US
+982f96c1-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2301-9d83-11ee-8ba2-c75ffde41a09,b392938a-d481-11d5-8f83-f03a82eb7e91,Amazon.com Inc.,AMZN.US
+982f96b5-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f5-9d83-11ee-8ba2-c75ffde41a09,25b4ccfe-6446-11d6-8e5f-e2335b4908c2,Anta Sports Products,2020.HK
+982f9693-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d3-9d83-11ee-8ba2-c75ffde41a09,c90d4426-d481-11d5-8f83-f03a82eb7e91,Apple Inc.,AAPL.US
+982f96bb-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22fb-9d83-11ee-8ba2-c75ffde41a09,072f4e52-648d-11d6-999e-f46fa78bd5e9,Baidu.com Inc.,BIDU.US
+982f96ba-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22fa-9d83-11ee-8ba2-c75ffde41a09,1dcdb7a4-62ec-11d6-9557-81304848e6bb,Bilibili Inc.,BILI.US
+982f968c-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22cc-9d83-11ee-8ba2-c75ffde41a09,ee263108-6358-11d6-8fd4-a31132883bf6,Block Inc.,SQ.US
+982f96c0-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2300-9d83-11ee-8ba2-c75ffde41a09,76e5d0d4-f333-11d5-9c53-cefb9d98b147,Boeing Co.,BA.US
+982f96ab-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22eb-9d83-11ee-8ba2-c75ffde41a09,edd6b1c0-6554-11d6-9cd8-e55370853dbc,BYD Co.,1211.HK
+982f96a0-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e0-9d83-11ee-8ba2-c75ffde41a09,N2IU.SI,CapitaLand Ascendas REIT,N2IU.SI
+982f96c7-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2307-9d83-11ee-8ba2-c75ffde41a09,90fa04aa-6556-11d6-898e-c47fd79b6569,CapitaLand Integrated Commercial,C38U.SI
+982f968f-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22cf-9d83-11ee-8ba2-c75ffde41a09,66ea7310-f333-11d5-9c53-cefb9d98b147,Carnival Corp.,CCL.US
+982f96c4-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2304-9d83-11ee-8ba2-c75ffde41a09,6b33451e-63cc-11d6-9061-f1a0382c21cc,China Hongqiao Group,1378.HK
+982f9685-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22c5-9d83-11ee-8ba2-c75ffde41a09,ae83e92a-6531-11d6-9b41-af0cb5cb759c,China Merchants Bank,3968.HK
+982f968a-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22ca-9d83-11ee-8ba2-c75ffde41a09,af65748a-d481-11d5-8f83-f03a82eb7e91,China Mobile (HK),0941.HK
+982f968b-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22cb-9d83-11ee-8ba2-c75ffde41a09,a1953ebc-d481-11d5-8f83-f03a82eb7e91,China Petroleum & Chemical,0386.HK
+982f96b2-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f2-9d83-11ee-8ba2-c75ffde41a09,724c3716-f333-11d5-9c53-cefb9d98b147,CNOOC,0883.HK
+982f96a5-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e5-9d83-11ee-8ba2-c75ffde41a09,70437d56-535f-41a6-b2ad-1d492f3a1f65,Datadog Inc.,DDOG.US
+982f96af-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22ef-9d83-11ee-8ba2-c75ffde41a09,bf234cf8-d481-11d5-8f83-f03a82eb7e91,Freeport-McMoRan Inc.,FCX.US
+982f96b7-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f7-9d83-11ee-8ba2-c75ffde41a09,7235c872-62ba-11d6-9edf-9263cb892872,Futu Holdings,FUTU.US
+982f968e-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22ce-9d83-11ee-8ba2-c75ffde41a09,a2e9166c-d481-11d5-8f83-f03a82eb7e91,Hong Kong Exchanges,0175.HK
+982f9690-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d0-9d83-11ee-8ba2-c75ffde41a09,512ab12a-c408-11d5-86be-993aaf5c1874,HSBC,0005.HK
+982f969c-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22dc-9d83-11ee-8ba2-c75ffde41a09,c687f32c-d481-11d5-8f83-f03a82eb7e91,Intel Corp.,INTC.US
+982f96b6-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f6-9d83-11ee-8ba2-c75ffde41a09,a11f63ae-d481-11d5-8f83-f03a82eb7e91,J.P. Morgan Chase & Co.,JPM.US
+982f9696-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d6-9d83-11ee-8ba2-c75ffde41a09,edbb2c36-637c-11d6-9bc1-cf4cd50b55fc,JD.com Inc.,JD.US
+982f96a1-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e1-9d83-11ee-8ba2-c75ffde41a09,284fc653-8d2c-476b-91d5-33a5eec73379,KE Holdings,BEKE.US
+982f969b-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22db-9d83-11ee-8ba2-c75ffde41a09,322b781b-f3df-4d01-bc35-998dbebbc60f,Kuaishou Technology,1024.HK
+982f96b1-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f1-9d83-11ee-8ba2-c75ffde41a09,92800c26-9269-4c09-9f48-ee812fe15982,LI AUTO INC.,LI.US
+982f96b9-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f9-9d83-11ee-8ba2-c75ffde41a09,3a1e248a-6502-11d6-9cb8-85b3d0857dbc,Li Ning Co.,2331.HK
+982f969e-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22de-9d83-11ee-8ba2-c75ffde41a09,244f30aa-6498-11d6-86db-a2d7024d55a8,Link REIT,0823.HK
+982f96ac-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22ec-9d83-11ee-8ba2-c75ffde41a09,MACT.SI,Mapletree Pan Asia Commercial Trust,A17U.SI
+982f96c5-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2305-9d83-11ee-8ba2-c75ffde41a09,bdec9c04-d481-11d5-8f83-f03a82eb7e91,Marriott International,MAR.US
+982f96c8-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2308-9d83-11ee-8ba2-c75ffde41a09,c725f398-62d3-11d6-9edf-d2a30b89a8b2,Meituan,3690.HK
+982f9692-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d2-9d83-11ee-8ba2-c75ffde41a09,887a54d8-63ad-11d6-9557-c17048c866fb,Meta Platforms Inc.,META.US
+982f96b0-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f0-9d83-11ee-8ba2-c75ffde41a09,77c95f02-f333-11d5-9c53-cefb9d98b147,MGM Resorts International,MGM.US
+982f9689-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22c9-9d83-11ee-8ba2-c75ffde41a09,c0d8bbb4-d481-11d5-8f83-f03a82eb7e91,Micron Technology Inc.,MU.US
+982f96c3-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2303-9d83-11ee-8ba2-c75ffde41a09,c9f06b34-d481-11d5-8f83-f03a82eb7e91,Microsoft Corp.,MSFT.US
+982f9686-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22c6-9d83-11ee-8ba2-c75ffde41a09,75e18f8e-f333-11d5-9c53-cefb9d98b147,NetEase Inc.,NTES.US
+982f9695-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d5-9d83-11ee-8ba2-c75ffde41a09,9f9bbd16-6563-11d6-989f-c1c0ef17585f,Netflix Inc.,NFLX.US
+982f96a9-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e9-9d83-11ee-8ba2-c75ffde41a09,bf79dc76-d481-11d5-8f83-f03a82eb7e91,Nike Inc.,NKE.US
+982f96a3-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e3-9d83-11ee-8ba2-c75ffde41a09,33d59e4e-62d4-11d6-95d1-b8f5cdb2ea7b,NIO INC.,NIO.US
+982f9684-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22c4-9d83-11ee-8ba2-c75ffde41a09,aeb4e0ac-d481-11d5-8f83-f03a82eb7e91,Nvidia Corp.,NVDA.US
+982f96bf-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22ff-9d83-11ee-8ba2-c75ffde41a09,dae0328a-641e-11d6-8070-8cb27c98589b,Oracle Corp.,ORCL.US
+982f969a-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22da-9d83-11ee-8ba2-c75ffde41a09,ad3fe5ec-635f-11d6-95d1-b8f5cdb2ea7b,PayPal Holdings,PYPL.US
+982f96be-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22fe-9d83-11ee-8ba2-c75ffde41a09,ed36cbc2-62d6-11d6-9591-cab34aa38e8a,PDD Holdings,PDD.US
+982f96c2-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2302-9d83-11ee-8ba2-c75ffde41a09,82bf9c3e-de00-11d5-9be0-f05e055bbe70,PetroChina,0857.HK
+982f96a2-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e2-9d83-11ee-8ba2-c75ffde41a09,d8d240f6-6459-11d6-9524-bca1fa6457b9,Ping An Insurance Group,2318.HK
+982f96a4-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e4-9d83-11ee-8ba2-c75ffde41a09,c92efe90-d481-11d5-8f83-f03a82eb7e91,Qualcomm Inc.,QCOM.US
+982f96b3-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f3-9d83-11ee-8ba2-c75ffde41a09,1e3f32f4-6502-11d6-987c-b844783f5dae,Salesforce Inc.,CRM.US
+982f96c6-9d85-11ee-8ba2-c75ffde41a09,gs,cddf2306-9d83-11ee-8ba2-c75ffde41a09,92fb4d7e-6310-11d6-9edf-d2a30b89a8b2,Sea Ltd.,SE.US
+982f968d-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22cd-9d83-11ee-8ba2-c75ffde41a09,f832d4fa-6509-11d6-9b81-bf2c05eba50c,SMIC,0981.HK
+982f96a8-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e8-9d83-11ee-8ba2-c75ffde41a09,4892d58c-6503-11d6-9c23-b6eea3e4bd54,Tencent Holdings,0700.HK
+982f96aa-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22ea-9d83-11ee-8ba2-c75ffde41a09,d8dafa8a-63e5-11d6-91e4-cedb3fecdf1d,Tesla Inc.,TSLA.US
+982f9697-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d7-9d83-11ee-8ba2-c75ffde41a09,74d420e8-f333-11d5-9c53-cefb9d98b147,TSMC,TSM.US
+982f96b4-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22f4-9d83-11ee-8ba2-c75ffde41a09,c1c8e68e-d481-11d5-8f83-f03a82eb7e91,WALMART INC.,WMT.US
+982f969f-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22df-9d83-11ee-8ba2-c75ffde41a09,af8f3c1a-62b7-11d6-8f7f-884f09b751aa,Walt Disney Co.,DIS.US
+982f96a7-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22e7-9d83-11ee-8ba2-c75ffde41a09,c2d8087a-d481-11d5-8f83-f03a82eb7e91,Wells Fargo & Co.,WFC.US
+982f9699-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d9-9d83-11ee-8ba2-c75ffde41a09,7d4b21fc-62d9-11d6-95d7-e1904808269b,Xiaomi Corp.,1810.HK
+982f96ae-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22ee-9d83-11ee-8ba2-c75ffde41a09,2f7723db-1535-42c6-aa8d-823ed8d08e3d,XPeng Inc.,XPEV.US
+982f9691-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d1-9d83-11ee-8ba2-c75ffde41a09,450fd7b2-6340-11d6-8130-bff1564b6fbe,Zhou Hei Ya Intl,1458.HK
+982f96bd-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22fd-9d83-11ee-8ba2-c75ffde41a09,28d51d3a-650e-11d6-86db-a2d7024d55a8,Zijin Mining,2899.HK
+982f9694-9d85-11ee-8ba2-c75ffde41a09,gs,cddf22d4-9d83-11ee-8ba2-c75ffde41a09,ZS.O,Zscaler,ZS.US

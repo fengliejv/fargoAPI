@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="ibagents@4.242.20.9:22 password" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+    <option name="confirmBeforeUploading" value="false" />
+    <serverData>
+      <paths name="ibagents@4.242.20.9:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/ibagents/bugs/api/v2" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="ibagents@52.233.84.72:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/ibagents/work/v2" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+TSMC,2330.TW
+Walt Disney Co.,DIS.N
+CapitaLand Ascendas REIT,CAPD.SI
+KE Holdings,BEKE.N
+NIO INC.,NIO.N
+Datadog Inc.,DDOG.N
+Wells Fargo & Co.,WFC.N
+Nike Inc.,NKE.N
+Mapletree Pan Asia Commercial Trust,MACT.SI
+XPeng Inc.,XPEV.N
+Freeport-McMoRan Inc.,FCX.N
+MGM Resorts International,MGM.N
+J.P. Morgan Chase & Co.,JPM.N
+Salesforce Inc.,CRM.N
+WALMART INC.,WMT.N
+Oracle Corp.,ORCL.N
+Boeing Co.,BA.N
+Sea Ltd.,SE.N
+CapitaLand Integrated Commercial,CMLT.SI
